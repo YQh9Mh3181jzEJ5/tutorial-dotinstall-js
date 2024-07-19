@@ -1,20 +1,44 @@
 "use strict";
 
 {
-  class User {
-    constructor(name, score) {
-      this.name = name;
-      this.score = score;
-    }
-
-    getUserString() {
-      return `${this.name} ${this.score.getScoreString()}`;
-    }
+  function showHeader() {
+    console.log(`Header`);
   }
 
-  const user1 = new User("Taro", new MathScore(50));
-  const user2 = new User("Jiro", new EnglishScore(80));
+  // function showUsers() {
+  //   console.log(`Users`);
+  // }
 
-  console.log(user1.getUserString());
-  console.log(user2.getUserString());
+  const showUsers = async () => {
+    const userUrl = `https://dotinstall.github.io/setup/fetchapi/users.json`;
+
+    try {
+      const response = await fetch(userUrl);
+      const users = await response.json();
+      users.forEach((user, index) => {
+        const paddedIndex = index.toString().padStart(2, "0");
+        const userName = user.userName;
+        const score = user.score;
+        console.log(`${paddedIndex}: ${userName}のスコアは${score}です`);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  function showFooter() {
+    console.log(`Footer`);
+  }
+
+  showHeader();
+  showUsers();
+  showFooter();
 }
+
+// https://dotinstall.github.io/setup/fetchapi/users.json
+
+// [
+//   { userName: "A", score: 10 },
+//   { userName: "A", score: 10 },
+//   { userName: "A", score: 10 },
+// ];
