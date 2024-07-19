@@ -1,44 +1,23 @@
 "use strict";
 
 {
-  function showHeader() {
-    console.log(`Header`);
-  }
+  const open = document.querySelector("#open");
 
-  // function showUsers() {
-  //   console.log(`Users`);
-  // }
+  const close = document.querySelector("#close");
+  const modal = document.querySelector("#modal");
+  const mask = document.querySelector("#mask");
 
-  const showUsers = async () => {
-    const userUrl = `https://dotinstall.github.io/setup/fetchapi/users.json`;
+  open.addEventListener("click", () => {
+    mask.classList.remove("hidden");
+    modal.classList.remove("hidden");
+  });
 
-    try {
-      const response = await fetch(userUrl);
-      const users = await response.json();
-      users.forEach((user, index) => {
-        const paddedIndex = index.toString().padStart(2, "0");
-        const userName = user.userName;
-        const score = user.score;
-        console.log(`${paddedIndex}: ${userName}のスコアは${score}です`);
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  close.addEventListener("click", () => {
+    mask.classList.add("hidden");
+    modal.classList.add("hidden");
+  });
 
-  function showFooter() {
-    console.log(`Footer`);
-  }
-
-  showHeader();
-  showUsers();
-  showFooter();
+  mask.addEventListener("click", () => {
+    close.click();
+  });
 }
-
-// https://dotinstall.github.io/setup/fetchapi/users.json
-
-// [
-//   { userName: "A", score: 10 },
-//   { userName: "A", score: 10 },
-//   { userName: "A", score: 10 },
-// ];

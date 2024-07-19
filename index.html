@@ -3,9 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My JavaScript</title>
+    <title>Modal Window</title>
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    <div id="open">詳細を見る</div>
+    <!-- モーダル  -->
+    <div id="mask" class="hidden"></div>
+    <section id="modal" class="hidden">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum vel
+        voluptas optio nihil, aperiam quo necessitatibus animi libero excepturi
+        voluptatem odio accusantium reprehenderit dignissimos doloremque facere
+        illo alias, non ratione?
+      </p>
+      <div id="close">閉じる</div>
+    </section>
     <script src="main.js"></script>
   </body>
 </html>
