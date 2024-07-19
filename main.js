@@ -1,19 +1,20 @@
 "use strict";
 
 {
-  let isDevMode = true;
-  const pElement = document.querySelector("p");
-  const buttonElement = document.querySelector("button");
-  buttonElement.addEventListener("click", () => {
-    if (!confirm("Are you sure?")) {
-      return;
+  class User {
+    constructor(name, score) {
+      this.name = name;
+      this.score = score;
     }
 
-    if (isDevMode) {
-      pElement.textContent = "Dev Mode is Off";
-    } else {
-      pElement.textContent = "Dev Mode is On";
+    getUserString() {
+      return `${this.name} ${this.score.getScoreString()}`;
     }
-    isDevMode = !isDevMode;
-  });
+  }
+
+  const user1 = new User("Taro", new MathScore(50));
+  const user2 = new User("Jiro", new EnglishScore(80));
+
+  console.log(user1.getUserString());
+  console.log(user2.getUserString());
 }
