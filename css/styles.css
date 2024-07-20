@@ -1,58 +1,63 @@
-body {
+h1 {
+  font-size: 18px;
+  border-bottom: 1px solid;
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
+
+dl {
   margin: 0;
-  font-family: Verdana, sans-serif;
 }
 
-header {
-  display: flex;
-  padding: 0 16px;
+dl > div {
+  margin-bottom: 8px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 22px;
-  line-height: 64px;
-}
-
-.sp-menu {
-  margin-left: auto;
-}
-
-.sp-menu #open {
-  font-size: 32px;
-  line-height: 64px;
+dt {
+  padding: 8px;
   cursor: pointer;
+  user-select: none;
+  position: relative;
 }
 
-main {
-  padding: 0 16px;
+dt::before {
+  content: "Q. ";
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  padding: 64px;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.overlay #close {
+dt::after {
+  content: "+";
   position: absolute;
-  top: 16px;
+  top: 8px;
   right: 16px;
-  font-size: 32px;
-  cursor: pointer;
+  transition: transform 0.3s;
 }
 
-.overlay ul {
-  list-style: none;
+dl > div.appear dt::after {
+  transform: rotate(45deg);
 }
 
-.overlay li {
-  margin-top: 24px;
+dd {
+  padding: 8px;
+  margin: 0;
+  display: none;
+}
+
+dd::before {
+  content: "A .";
+}
+
+dl > div.appear dd {
+  display: block;
+  animation: 0.3s fadeIn;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
