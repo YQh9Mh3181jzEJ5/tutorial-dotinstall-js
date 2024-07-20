@@ -1,22 +1,10 @@
 "use strict";
-
 {
-  const menuItems = document.querySelectorAll(".menu li a");
-  const contents = document.querySelectorAll(".content");
-
-  menuItems.forEach((clickedItem) => {
-    clickedItem.addEventListener("click", (event) => {
-      event.preventDefault();
-      menuItems.forEach((item) => {
-        item.classList.remove("active");
-      });
-      clickedItem.classList.add("active");
-
-      contents.forEach((clickedContent) => {
-        clickedContent.classList.remove("active");
-      });
-
-      document.getElementById(clickedItem.dataset.id).classList.add("active");
-    });
+  const btn = document.getElementById("btn");
+  const result = document.getElementById("result");
+  btn.addEventListener("click", () => {
+    const results = ["大吉", "中吉", "小吉", "凶", "大凶"];
+    const n = Math.floor(Math.random() * results.length);
+    result.textContent = results[n];
   });
 }

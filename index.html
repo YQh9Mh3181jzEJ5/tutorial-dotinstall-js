@@ -3,27 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tab Menu</title>
+    <title>My Omikuji</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <ul class="menu">
-        <li><a href="#" class="active" data-id="about">サイトの概要</a></li>
-        <li><a href="#" data-id="service">サービス内容</a></li>
-        <li><a href="#" data-id="contact">お問い合わせ</a></li>
-      </ul>
-
-      <section class="content active" id="about">
-        サイトの概要サイトの概要サイトの概要
+    <main>
+      <section>
+        <h1>今日の運勢</h1>
+        <p id="result">?</p>
       </section>
-      <section class="content" id="service">
-        サービス内容サービス内容サービス内容
-      </section>
-      <section class="content" id="contact">
-        お問い合わせお問い合わせお問い合わせ
-      </section>
-    </div>
+      <button id="btn">おみくじを引く</button>
+    </main>
     <script src="main.js"></script>
   </body>
 </html>
