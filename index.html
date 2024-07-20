@@ -3,45 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyFAQ</title>
+    <title>Tab Menu</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <h1>FAQ</h1>
-    <dl>
-      <div>
-        <dt>質問です</dt>
-        <dd>
-          回答です。Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Labore possimus deleniti reprehenderit facilis quas libero aliquam.
-          Quisquam blanditiis sint, vel quaerat quis illum impedit debitis
-          repellat amet voluptatum! Tempore, ea!
-        </dd>
-      </div>
-    </dl>
-    <dl>
-      <div>
-        <dt>質問です</dt>
-        <dd>
-          回答です。Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Labore possimus deleniti reprehenderit facilis quas libero aliquam.
-          Quisquam blanditiis sint, vel quaerat quis illum impedit debitis
-          repellat amet voluptatum! Tempore, ea!
-        </dd>
-      </div>
-    </dl>
-    <dl>
-      <div>
-        <dt>質問です</dt>
-        <dd>
-          回答です。Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Labore possimus deleniti reprehenderit facilis quas libero aliquam.
-          Quisquam blanditiis sint, vel quaerat quis illum impedit debitis
-          repellat amet voluptatum! Tempore, ea!
-        </dd>
-      </div>
-    </dl>
+    <div class="container">
+      <ul class="menu">
+        <li><a href="#" class="active" data-id="about">サイトの概要</a></li>
+        <li><a href="#" data-id="service">サービス内容</a></li>
+        <li><a href="#" data-id="contact">お問い合わせ</a></li>
+      </ul>
 
+      <section class="content active" id="about">
+        サイトの概要サイトの概要サイトの概要
+      </section>
+      <section class="content" id="service">
+        サービス内容サービス内容サービス内容
+      </section>
+      <section class="content" id="contact">
+        お問い合わせお問い合わせお問い合わせ
+      </section>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
