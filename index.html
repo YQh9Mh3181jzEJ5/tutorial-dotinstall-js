@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Omikuji</title>
+    <title>パスワードジェネレーター</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <main>
-      <section>
-        <h1>今日の運勢</h1>
-        <p id="result">?</p>
-      </section>
-      <button id="btn">おみくじを引く</button>
+      <p id="result">asdf</p>
+      <button id="btn">パスワードを生成</button>
+      <fieldset>
+        <legend>オプション</legend>
+        <label
+          >長さ(<span id="password-length">8</span>)
+          <input type="range" id="slider" min="8" max="32" value="8"
+        /></label>
+        <label>数字 <input type="checkbox" id="numbers-checkbox"/></label>
+        <label>記号 <input type="checkbox" id="symbols-checkbox"/></label>
+      </fieldset>
     </main>
     <script src="main.js"></script>
   </body>
